@@ -1,5 +1,5 @@
-const useClassName = (className?: string | string[]) => {
-    const classNames: string[] = className ? (Array.isArray(className) ? className : [className]) : [];
+const useClassName = (className?: string | (undefined | string)[]) => {
+    const classNames: (string | undefined)[] = className ? (Array.isArray(className) ? className : [className]) : [];
 
     function add(name: string | undefined | null, expression?: boolean) {
         if ((arguments.length === 1 || (arguments.length === 2 && expression)) && name) {
